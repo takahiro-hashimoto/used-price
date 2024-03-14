@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+});
+
+Route::get('/watch/', function () {
+    return view('watch.index');
+});
+
+Route::get('/watch/series-9', function () {
+    return view('watch.series-9');
 });

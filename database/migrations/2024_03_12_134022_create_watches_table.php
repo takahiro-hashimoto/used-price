@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('tip');
-            $table->integer('size');
+            $table->string('size');
             $table->integer('type');
             $table->date('manufacture_date');
             $table->boolean('display');
