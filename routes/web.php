@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WatchesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +17,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/watch/', function () {
-    return view('watch.index');
-});
+Route::get('/watch/', [WatchesController::class, 'index']);
 
 Route::get('/watch/series-9', function () {
     return view('watch.series-9');
