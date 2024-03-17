@@ -18,7 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/watch/', [WatchesController::class, 'index']);
-
-Route::get('/watch/series-9', function () {
-    return view('watch.series-9');
-});
+Route::get('/watch/{product_id}', [WatchesController::class, 'detail']);

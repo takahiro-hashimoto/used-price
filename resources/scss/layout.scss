@@ -1,3 +1,12 @@
+.l-content {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.l-section {
+  padding: 40px 0 0;
+}
+
 .l-center {
   text-align: center;
 }
@@ -11,7 +20,7 @@
 }
 
 .l-half > * {
-  width: 50%;
+  width: 50% ;
 }
   
 .l-third > * {
@@ -64,4 +73,10 @@
 
 .l-top-xlarge {
   margin-top: 60px !important;
+}
+
+.l-priceRanking > * {
+  width: 40%;
+  display: inline-block;
+  vertical-align: middle;
 }

@@ -9,9 +9,14 @@
     </head>
 
     <body>
+
         @include('commons.navbar')
-        <div>
+
+        <div class="l-content l-section l-bottom-xlarge">
             @yield('content')
         </div>
+        
+        @include('commons.footer')
+        
     </body>
 </html>

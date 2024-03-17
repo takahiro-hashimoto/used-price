@@ -2,11 +2,11 @@
 
 @section('content')
 
-<h2>watchトップ2</h2>
+<h2>AppleWatch 一覧</h2>
 
-    <ul>
     @foreach ($watches as $watch)
-        <li>{{ $watch->name }}</li>
+    <ul class="l-bottom-large">
+        <li><a href="{{ $watch->id }}">{{ $watch->name }}</a></li>
         <li>
             @if ($watch->type === 0)
                 hoge
@@ -15,13 +15,15 @@
             @endif
         </li>
         <li>
-            @if ($watch->size === 1)
+            @if ($watch->size === 0)
                 41mm or 45mm
-            @elseif ($watch->size === 2)
+            @elseif ($watch->size === 1)
                 40mm or 44mm
+            @elseif ($watch->size === 2)
+                49mm
             @endif
         </li>
-    @endforeach
     </ul>
+    @endforeach
 
 @endsection

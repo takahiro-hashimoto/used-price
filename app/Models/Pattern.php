@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Pattern extends Model
 {
     use HasFactory;
+    
+    public function shops() {
+        return $this->belongsToMany('App\Models\Shop');
+    }
 }
+

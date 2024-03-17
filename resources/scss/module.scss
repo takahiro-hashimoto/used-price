@@ -1,4 +1,186 @@
+.heading-top-container {
+  padding: 8px;
+  background-color: #eee;
+  
+  .heading-top {
+    font-size: 0.9rem;
+    font-weight: normal;
+  }
+}
+
 .header {
+  background-color: #333;
+  padding: 10px 0;
+  
+  .header-logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+   
+  .header-nav {
+    list-style: none;
+    display: flex;
+    
+    * {
+      margin-right: 24px;
+    }
+    
+    *:last-child {
+      margin-right: 0;
+    }
+  }
+  
+  .header-nav-link {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.footer {
    background-color: #ccc;
    padding: 20px;
+}
+
+.panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  
+  li {
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 0px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-right: -1px;
+    margin-bottom: -1px;
+  }
+  
+  .panel-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
+  .panel-link-thumb {
+    width: 72px;
+    height: auto;
+  }
+  
+  .panel-link-text {
+    
+    margin: 0 0 0 16px;
+    
+    dt {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    
+    dd {
+      font-size: 0.8rem;
+      font-weight: normal;
+      margin: 0;
+      color: #999;
+      line-height: 1.4;
+    }
+  }
+}
+
+.priceRanking {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 20px;
+
+  .priceRanking-title-container {
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+
+  .priceRanking-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .priceRanking-sub-title {
+    font-size: 0.9rem;
+    font-weight: bold;
+  }
+
+  .priceRanking-list {
+    list-style: none;
+    counter-reset: item;
+    padding: 0;
+
+    li {
+      position: relative;
+      padding: 12px 1px 12px 34px;
+      border-bottom: 1px dotted #ddd;
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.1rem;
+      line-height: 1;
+
+      &:nth-child(1):before {
+        background-color: #dbb400;
+      }
+
+      &:nth-child(2):before {
+        background-color: #9fa0a0;
+      }
+
+      &:nth-child(3):before {
+        background-color: #c47022;
+      }
+
+      &:last-child {
+        border-bottom: 0px;
+      }
+
+      &:before {
+        content: counter(item);
+        counter-increment: item;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: #333;
+        color: #fff;
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        text-align: center;
+        line-height: 22px;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+    .priceRanking-list-name {
+      margin-right: auto;
+    }
+
+    .priceRanking-list-link {
+      margin-left: auto;
+    }
+
+      a {
+        text-decoration: none;
+        font-size: 1.2rem;
+      }
+    }
+  }
 }

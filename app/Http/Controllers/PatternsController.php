@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\Models\Watch;
+use App\Models\Pattern;
 
-class WatchesController extends Controller
+class PatternsController extends Controller
 
 {
     /**
@@ -14,14 +14,9 @@ class WatchesController extends Controller
      */
     public function index()
     {
-        $watches = Watch::all();
-        return view('watch.index', ['watches' => $watches]);
-    }
-    
-    public function detail($id)
-    {
-        $watch = Watch::findOrFail($id);
-        return view('watch.detail')->with('watch', $watch);
+        $patterns = Pattern::all();
+        return view('watch.index', ['patterns' => $patterns]);
+        return view('watch.detail', ['patterns' => $patterns]);
     }
 
     /**
