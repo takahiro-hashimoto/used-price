@@ -15,7 +15,10 @@ use App\Http\Controllers\WatchesController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 
-Route::get('/watch/', [WatchesController::class, 'index']);
-Route::get('/watch/{product_id}', [WatchesController::class, 'detail']);
+
+Route::get('/watch/', [WatchesController::class, 'index'])->name('watch');
+
+Route::get('/watch/{product_id}', [WatchesController::class, 'detail'])->name('item');
+

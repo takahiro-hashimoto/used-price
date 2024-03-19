@@ -7,7 +7,7 @@
 <ul class="panel l-bottom-xlarge">
     <li>
         <a class="panel-link" href="/iphone/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>iPhone</dt>  
                 <dd>iPhone15、14、13、SEなどの中古料金相場とおすすめECサイトを解説</dd>
@@ -16,7 +16,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>Apple Watch</dt>  
                 <dd>Apple Watc9、８、７、SE、Ultraの中古相場とおすすめECサイトを解説</dd>
@@ -25,7 +25,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>iPad</dt>  
                 <dd>iPad Pro、Air、mini、無印の中古料金相場、おすすめECサイトを解説</dd>
@@ -34,7 +34,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>iMac</dt>  
                 <dd>中古価格 カメラ性能比較 中古価格 カメラ性能比較</dd>
@@ -43,7 +43,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>MacBook</dt>  
                 <dd>中古価格 料金相場 カメラ性能比較 中古価格 カメラ性能比較</dd>
@@ -52,7 +52,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>AirPods</dt>  
                 <dd>中古価格 料金相場 カメラ性能比較 中古価格 カメラ性能比較</dd>
@@ -67,7 +67,7 @@
 <ul class="panel l-bottom-xlarge">
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>Pixel</dt>  
                 <dd>中古価格 カメラ性能比較 中古価格 カメラ性能比較</dd>
@@ -76,7 +76,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>Galaxy</dt>  
                 <dd>中古価格 カメラ性能比較 中古価格 カメラ性能比較</dd>
@@ -85,7 +85,7 @@
     </li>
     <li>
         <a class="panel-link" href="/watch/">
-            <img class="panel-link-thumb" src="https://placehold.jp/150x150.png" alt="">
+            <img class="panel-link-thumb" src="{{ asset('images/150x150.png') }}" alt="">
             <dl class="panel-link-text">
                 <dt>Xperia</dt>  
                 <dd>中古価格 カメラ性能比較 中古価格 カメラ性能比較</dd>
