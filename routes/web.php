@@ -19,6 +19,4 @@ Route::get('/', function () {
 
 
 Route::get('/watch/', [WatchesController::class, 'index'])->name('watch');
-
 Route::get('/watch/{product_id}', [WatchesController::class, 'detail'])->name('item');
-

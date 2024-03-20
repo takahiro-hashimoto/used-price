@@ -9,8 +9,15 @@ class Pattern extends Model
 {
     use HasFactory;
     
+    protected $fillable = ['name', 'description'];
+    
     public function shops() {
-        return $this->belongsToMany('App\Models\Shop');
+        return $this->belongsToMany(Shop::class)
+                    ->withPivot('price');
+    }
+    
+    public function watches() {
+        return $this->belongsToMany(Watch::class)
+                    ->withPivot('pattern_id');
     }
 }
-

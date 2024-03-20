@@ -8,7 +8,7 @@
 
 <ul class="l-bottom-large">
     @foreach ($watches as $watch)
-        <li><a href="{{ $watch->id }}">{{ $watch->name }}</a></li>
+        <li><a href="/watch/{{ $watch->id }}">{{ $watch->name }}</a></li>
     @endforeach
 </ul>
 

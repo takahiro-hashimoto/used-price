@@ -10,7 +10,7 @@ class Shop extends Model
     use HasFactory;
     
     public function patterns() {
-        return $this->belongsToMany('App\Models\Pattern')
-                         ->withPivot('price');
+        return $this->belongsToMany(Pattern::class)
+                    ->withPivot('price');
     }
 }

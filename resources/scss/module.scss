@@ -49,6 +49,40 @@
    padding: 20px;
 }
 
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
+  font-size: 14px;
+  
+  &-item {
+    display: inline-block;
+    margin-right: 5px;
+    
+    a {
+      color: #007bff;
+      text-decoration: none;
+      
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &:after {
+      content: '>';
+      margin-left: 5px;
+    }
+    
+    &.active {
+      color: #000;
+
+      &:after {
+        content: none;
+      }
+    }
+  }
+}
+
+
 .panel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -305,5 +339,40 @@
 
   tbody th {
     padding-left: 0;  
+  }
+}
+
+.parallel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    margin: 0 0 10px !important;
+    font-size: 0.9rem !important;
+  }
+
+  &-left {
+    width: 36%;
+  }
+
+  &-right {
+    width: 60%;
+    padding-left: 4%;
+  }
+
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+    align-items: initial;
+
+    &-left {
+      width: 100%;
+      margin: 0 0 20px;
+    }
+
+    &-right {
+      width: 100%;
+      padding-left: 0;
+    }
   }
 }

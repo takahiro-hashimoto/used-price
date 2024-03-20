@@ -10,7 +10,7 @@
 <div class="productInfo l-bottom-large">
   
   <div class="productInfo-left">
-  	<p class="mainVisual-image">
+  	<p class="productInfo-image">
   	  <img src="{{ asset('images/150x150.png') }}" alt="{{ $watch->name }}の商品画像" width="100%" height="auto">
   	</p>
   </div>
@@ -18,12 +18,11 @@
   <div class="productInfo-right">
     <div class="l-bottom-medium">
       <p class="productInfo-title">{{ $watch->name }}</p>
-      <p class="productInfo-release">発売日：2023年9月12日</p>
+      <p class="productInfo-release">発売日：{{ date('Y年n月j日', strtotime($watch->manufacture_date)) }}</p>
     </div>
     <ul class="productInfo-price l-bottom-medium">
       <li>
-      	<span class="productInfo-price-icon">中古最安値</span>
-      	<span class="productInfo-price-text">¥10,500</span>
+      	<span class="productInfo-price-icon">中古最安値</span><span class="productInfo-price-text">¥10,500</span>
       </li>
       <li>
       	<span class="productInfo-price-icon">中古相場</span>
@@ -31,14 +30,13 @@
       </li>
     </ul>
     <ul class="productInfo-spec">
-      <li>急速充電</li>
-      <li class="is-active">常時点灯</li>
-      <li class="is-active">衝突事故検出</li>
-      <li class="is-active">皮膚温度測定</li>
-	    <li class="is-active">血中酸素濃度測定</li>
-      <li>電気心拍センサー</li>
-      <li class="is-active">水温水深センサー</li>
-      <li class="is-active">日本語入力</li>
+      <li class="{{ $watch->charge == 0 ? 'is-active' : '' }}">急速充電</li>
+      <li class="{{ $watch->display == 0 ? 'is-active' : '' }}">常時点灯</li>
+      <li class="{{ $watch->detection == 0 ? 'is-active' : '' }}">衝突事故検出</li>
+      <li class="{{ $watch->skin_temperature == 0 ? 'is-active' : '' }}">皮膚温度測定</li>
+	    <li class="{{ $watch->oxygen == 0 ? 'is-active' : '' }}">血中酸素濃度測定</li>
+      <li class="{{ $watch->cardiogram == 0 ? 'is-active' : '' }}">電気心拍センサー</li>
+      <li class="{{ $watch->doubletap == 0 ? 'is-active' : '' }}">ダブルタップ</li>
     </ul>
   </div>
 </div>

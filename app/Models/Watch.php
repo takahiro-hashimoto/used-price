@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Watch extends Model
 {
     use HasFactory;
+    
+    public function patterns() {
+        return $this->belongsToMany(Pattern::class)
+                    ->withPivot('pattern_id');
+    }
 }
