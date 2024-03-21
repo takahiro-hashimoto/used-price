@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WatchesController;
+use App\Http\Controllers\PatternsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +19,5 @@ Route::get('/', function () {
 })->name('home');
 
 
-Route::get('/watch/', [WatchesController::class, 'index'])->name('watch');
-Route::get('/watch/{product_id}', [WatchesController::class, 'detail'])->name('item');
+Route::get('/watch/', [PatternsController::class, 'index'])->name('watch');
+Route::get('/watch/{product_id}', [PatternsController::class, 'detail'])->name('item');

@@ -11,12 +11,20 @@ use App\Models\Shop;
 
 class PatternsController extends Controller
 {
+    public function index()
+    {
+        $patterns = Pattern::all();
+        return view('watch.index', ['patterns' => $patterns]);
+    }
+    
     public function detail($id)
     {
         
         $pattern = Pattern::findOrFail($id);
-        $watch = $pattern->watches()->get();
+        $shops = $pattern->shops()->withPivot('price')->get();
+        $watches = $pattern->watches()->get();
+        dd($pattern, $shops, $watches);
 
-        return view('watch.detail', compact('pattern', 'watch'));
+        return view('watch.detail', compact('pattern', 'watches', 'shops'));
     }
 }

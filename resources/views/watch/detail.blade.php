@@ -2,9 +2,13 @@
 
 @section('content')
 
-{{ Breadcrumbs::render('item', $watch->id) }}
+<?php echo($pattern) ?>
+<?php echo($watches) ?>
+<?php echo($shops) ?>
 
-<h1 class="l-bottom-large">中古{{ $watch->name }}を買うならどこが安い？中古ECサイト比較でおすすめがわかる</h1>
+@foreach($watches as $watch)
+
+{{ Breadcrumbs::render('item', $watch->id) }}
 
 
 <div class="productInfo l-bottom-large">
@@ -84,5 +88,7 @@
 <h2 class="l-bottom-medium">{{ $watch->name }}とその他モデルの比較</h2>
 
 <h2 class="l-bottom-medium">{{ $watch->name }}を中古で買う際のよくある質問</h2>
+
+@endforeach
 
 @endsection
