@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section("title", "中古価格")
+
+@section('description', 'Laravel個別ページです。')
+
 @section('content')
 
 <h2 class="l-bottom-large">Apple製品</h2>

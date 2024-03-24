@@ -14,10 +14,10 @@ use App\Http\Controllers\PatternsController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('home');
-
+Route::get('/', function () { return view('index'); })->name('home');
 
 Route::get('/watch/', [PatternsController::class, 'index'])->name('watch');
+
 Route::get('/watch/{product_id}', [PatternsController::class, 'detail'])->name('item');
+
+Route::get('/scrape', 'App\Http\Controllers\ScraperController@scrape');

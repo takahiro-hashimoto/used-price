@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title', '中古Apple Watchの選び方')
+
+@section('description', 'Laravel個別ページです。')
+
 @section('content')
 
 {{ Breadcrumbs::render('watch') }}
