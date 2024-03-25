@@ -49,66 +49,39 @@
 
 <div class="priceInfo-container l-bottom-large">
   
+@foreach ($patternShops as $index => $patternShop)
   <div class="priceInfo">
     <div class="priceInfo-title-container">
-      <p class="priceInfo-title">GPSモデル</p>
-      <p class="priceInfo-sub-title">主要ECサイトの中古価格</p>
-    </div>        
-    <ol class="priceInfo-list">
-      <li><span class="priceInfo-list-name">にこスマ</span><span class="priceInfo-list-link"><a href="">¥10,500</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">ゲオ・オンラインストア</span><span class="priceInfo-list-link"><a href="">¥11,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">じゃんぱら</span><span class="priceInfo-list-link"><a href="">¥12,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">イオシス</span><span class="priceInfo-list-link"><a href="">¥12,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">リコレ</span><span class="priceInfo-list-link"><a href="">¥16,000</a><span></span></span></li>
-    </ol>
-  </div>
-  
-  <div class="priceInfo">
-    <div class="priceInfo-title-container">
-      <p class="priceInfo-title">GPS + セルラーモデル</p>
-      <p class="priceInfo-sub-title">主要ECサイトの中古価格</p>
-    </div>        
-    <ol class="priceInfo-list">
-      <li><span class="priceInfo-list-name">にこスマ</span><span class="priceInfo-list-link"><a href="">¥10,500</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">ゲオ・オンラインストア</span><span class="priceInfo-list-link"><a href="">¥11,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">じゃんぱら</span><span class="priceInfo-list-link"><a href="">¥12,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">イオシス</span><span class="priceInfo-list-link"><a href="">¥12,000</a><span></span></span></li>
-      <li><span class="priceInfo-list-name">リコレ</span><span class="priceInfo-list-link"><a href="">¥16,000</a><span></span></span></li>
-    </ol>
-  </div>
-  
-  <!-- ここがわからない箇所です▼ -->
-    @foreach ($patternShops as $patternShop)
-  <div class="priceInfo">
-    <div class="priceInfo-title-container">
-      <p class="priceInfo-title">GPS + セルラーモデル</p>
+      @if ($index === 0)
+        <p class="priceInfo-title">GPS + セルラーモデル</p>
+      @elseif ($index === 1)
+        <p class="priceInfo-title">セルラーモデル</p>
+      @endif
       <p class="priceInfo-sub-title">主要ECサイトの中古価格</p>
     </div>
-    @php $counter = 0; @endphp
     <ol class="priceInfo-list">
     @foreach ($patternShop as $shop)
-        <li>
-            <span class="priceInfo-list-name">{{ $shop[0]->name }}</span>
-            <span class="priceInfo-list-link"><a href="">¥{{ $shop[0]->pivot_price }}</a></span>
-        </li>
-    @php $counter++; @endphp
-    </ol>
+      <li>
+          <span class="priceInfo-list-name">{{ $shop->name }}</span>
+          @if ($shop->getRawOriginal('pivot_price') == 0)
+              <span class="priceInfo-list-link">在庫なし</span>
+          @else
+              <span class="priceInfo-list-link"><a href="">¥{{ $shop->getRawOriginal('pivot_price') }}</a></span>
+          @endif
+      </li>
     @endforeach
+    </ol>
   </div>
-  @endforeach
-  <!-- ここがわからない箇所です ▲ -->
-
-  <?php dump($patternShops) ?>
-
+@endforeach
 </div>
 
 <h2 class="l-bottom-medium">その他の中古{{ $watch->name }}の購入先</h2>
 
 <ul class="panelLink l-bottom-large">
-  <li><a href=""><span class="text-bold">Apple認定整備済製品</span><br><span class="text-small">hogehogehoge</a></li>
-  <li><a href=""><span class="text-bold">Amazon製備品</span><br><span class="text-small">hogehogehoge</a></li>
-  <li><a href=""><span class="text-bold">メルカリ</span><br><span class="text-small">hogehogehoge</a></li>
-  <li><a href=""><span class="text-bold">ラクマ</span><br><span class="text-small">hogehogehoge</a></li>
+  <li><a href=""><span class="text-bold">Apple認定整備済製品</span><br><span class="text-small">中古{{ $watch->name }}の在庫を探す</a></li>
+  <li><a href=""><span class="text-bold">Amazon製備品</span><br><span class="text-small">中古{{ $watch->name }}の在庫を探す</a></li>
+  <li><a href=""><span class="text-bold">メルカリ</span><br><span class="text-small">中古{{ $watch->name }}の在庫を探す</a></li>
+  <li><a href=""><span class="text-bold">ラクマ</span><br><span class="text-small">中古{{ $watch->name }}の在庫を探す</a></li>
 </ul>
 
 <h2 class="l-bottom-medium">{{ $watch->name }}が前モデルから主に進化した点</h2>

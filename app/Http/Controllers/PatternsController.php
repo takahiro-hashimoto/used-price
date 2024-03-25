@@ -19,21 +19,31 @@ class PatternsController extends Controller
     public function detail($watch_id)
     
     {
-        
         // 受け取った引数と同じモデルのwatch情報を取得する
         $watch = Watch::find($watch_id);
         
-        // // Watch モデルから $watchId に合致するパターンを取得
+        // Watchモデルから$watchIdに合致するパターンを取得
         $patterns = $watch::find($watch_id)->patterns;
         
-        // 取得したパターンIDに合致するshopとprice情報を取得する
         $patternShops = [];
         foreach ($patterns as $pattern) {
-            $price = $pattern->shops()->withPivot('price')->get();
-            $patternShops[] = [$price];
-            //$patternShops = $price;
+            $prices = $pattern->shops()->withPivot('price')->get();
+    
+            // 金額が0円（在庫なし）のデータを格納
+            $zeroPrices = $prices->filter(function ($item) {
+                return $item->pivot->price == 0;
+            });
+            
+            // 金額が0円（在庫なし）でないデータを格納
+            $nonZeroPrices = $prices->reject(function ($item) {
+                return $item->pivot->price == 0;
+            })->sortBy('pivot.price');
+
+            // 0円は最後に来るようにして配列をマージする
+            $sortedPrices = $nonZeroPrices->merge($zeroPrices);
+            $patternShops[] = $sortedPrices;
         }
         
-        return view('watch.detail', compact('watch', 'patternShops'));
+        return view('watch.detail', compact('watch', 'patternShops', 'patterns'));
     }
 }

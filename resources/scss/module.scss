@@ -38,6 +38,14 @@
     font-size: 0.9rem;
     font-weight: normal;
   }
+ 
+  @media screen and (max-width: 767px) {
+    .heading-top {
+      white-space: nowrap;
+      overflow-x: auto;
+      padding: 4px !important;
+    }
+  }
 }
 
 .header {
@@ -161,6 +169,10 @@
       color: #999;
       line-height: 1.4;
     }
+  }
+ 
+  @media screen and (max-width: 767px) {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
