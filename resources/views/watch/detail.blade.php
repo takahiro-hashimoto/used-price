@@ -66,7 +66,8 @@
           @if ($shop->getRawOriginal('pivot_price') == 0)
               <span class="priceInfo-list-link">在庫なし</span>
           @else
-              <span class="priceInfo-list-link"><a href="">¥{{ $shop->getRawOriginal('pivot_price') }}</a></span>
+              @php $formatted_price = number_format($shop->getRawOriginal('pivot_price')); @endphp
+              <span class="priceInfo-list-link"><a href="">¥{{ $formatted_price }}</a></span>
           @endif
       </li>
     @endforeach
@@ -106,6 +107,5 @@
 <h2 class="l-bottom-medium">{{ $watch->name }}とその他モデルの比較</h2>
 
 <h2 class="l-bottom-medium">{{ $watch->name }}を中古で買う際のよくある質問</h2>
-
 
 @endsection
